@@ -28,7 +28,3 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - run: exit 0
-          if: ${{ success() }}
-
-        - run: exit 1
-          if: ${{ !success() }}

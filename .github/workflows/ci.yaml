@@ -7,10 +7,11 @@ on:
 
 jobs:
   integration:
-    name: Integration
+    name: Bors
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 10
     strategy:
+      fail-fast: false
       matrix:
         package: ['a', 'b']
 
@@ -18,5 +19,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Integration tests
-        run: exit 1
+      - name: Step name
+        run: exit ${{ matrix.package == 'a' && 1 || 0 }}

@@ -1,0 +1,1 @@
+# An example repo for integrating [bors](https://bors.tech/) with [GitHub workflows](https://docs.github.com/en/actions/using-workflows) and [matrix jobs](https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs).

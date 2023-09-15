@@ -7,7 +7,7 @@ on:
 
 jobs:
   integration:
-    name: Integration
+    name: Job name
     runs-on: ubuntu-latest
     timeout-minutes: 10
     strategy:
@@ -18,5 +18,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Integration tests
+      - name: Step name
         run: exit 1

@@ -1,0 +1,22 @@
+name: ci
+on:
+  push:
+    branches-ignore:
+      - master
+  pull_request:
+
+jobs:
+  integration:
+    name: Integration
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      matrix:
+        package: ['a', 'b']
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Integration tests
+        run: exit 1

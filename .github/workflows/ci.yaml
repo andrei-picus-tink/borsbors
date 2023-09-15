@@ -22,22 +22,10 @@ jobs:
         run: exit 0
 
 
-  ci-success:
+  bors:
     name: Bors
-    if: ${{ success() }}
     needs:
       - test
     runs-on: ubuntu-latest
     steps:
-      - name: Mark the job as a success
-        run: exit 0
-
-  ci-failure:
-    name: Bors
-    if: ${{ !success() }}
-    needs:
-      - test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Mark the job as a failure
-        run: exit 1
+        - run: exit ${{ !success() && 1 || 0 }}

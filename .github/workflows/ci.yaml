@@ -21,11 +21,14 @@ jobs:
       - name: Tests
         run: exit 0
 
-
   bors:
     name: Bors
     needs:
       - test
     runs-on: ubuntu-latest
     steps:
-        - run: exit ${{ !success() && 1 || 0 }}
+        - run: exit 0
+          if: ${{ success() }}
+
+        - run: exit 1
+          if: ${{ !success() }}

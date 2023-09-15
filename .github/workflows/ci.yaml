@@ -7,7 +7,7 @@ on:
 
 jobs:
   integration:
-    name: Job name
+    name: Bors
     runs-on: ubuntu-latest
     timeout-minutes: 10
     strategy:

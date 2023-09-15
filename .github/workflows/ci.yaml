@@ -25,6 +25,7 @@ jobs:
     name: Bors
     needs:
       - test
+    if: ${{ always() }}
     runs-on: ubuntu-latest
     steps:
         - run: exit 0
